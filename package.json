@@ -72,7 +72,6 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "test": "node server.js",
     "start": "node server.js"
   },
   "author": "",
