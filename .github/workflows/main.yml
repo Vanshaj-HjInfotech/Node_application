@@ -4,8 +4,6 @@ name: Node.js CI/CD Pipeline
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -15,16 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18' 
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-
-      # Step 4: Build Docker image
-      - name: Build Docker Image
-        run: docker build -t node-docker-app .
+        
+      - name: Build
+        run: npm run build
