@@ -25,7 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory:  Node_application
 
       - name: Deploy to Azure WebApp
         uses: azure/webapps-deploy@v3
