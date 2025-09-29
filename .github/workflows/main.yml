@@ -30,6 +30,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: wa-test-ci-001
-          package: Node_application
+          package: .
 
         
