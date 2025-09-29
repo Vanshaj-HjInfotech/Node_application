@@ -19,17 +19,18 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}   
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18' 
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+        working-directory:  Node_application
 
       - name: Deploy to Azure WebApp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: wa-test-ci-001
-          package: .
+          package: Node_application
 
         
